@@ -1,0 +1,450 @@
+        /**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+        
+        #rgbValue,
+        #hslaValue {
+            float: right;
+        }
+        
+        .cj-container {
+            overflow: auto;
+        }
+        
+        #showPicker {
+            float: left;
+        }
+        
+        .colorPicker {
+            background: #E8E6E0;
+            border: 1px solid #BBB;
+            -moz-border-radius: .3em;
+            border-radius: .3em;
+            margin: 1em;
+            display: inline-block;
+        }
+        
+        .colorPicker .extras {
+            float: right;
+            margin: 0.5em;
+        }
+        
+        .colorPicker .extras .currentColorContainer {
+            overflow: hidden;
+        }
+        
+        .colorPicker .extras .currentColor {
+            float: right;
+            width: 65px;
+            height: 30px;
+            border: 1px solid #BBB;
+            -moz-border-radius: .3em;
+            border-radius: .3em;
+        }
+        
+        .colorPicker .extras .colorFields {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        .colorPicker .extras .color {
+            text-align: right;
+        }
+        
+        .colorPicker .extras .colorFields input {
+            width: 40px;
+            margin-left: 0.5em;
+        }
+        
+        .colorPicker .extras .hex {
+            float: right;
+        }
+        
+        .colorPicker .extras .hex input {
+            width: 60px;
+        }
+        
+        .colorPicker .twod {
+            float: left;
+            margin: 0.5em;
+        }
+        /* main dimensions */
+        
+        .colorPicker .twod,
+        .colorPicker .twod .bg {
+            width: 240px;
+            height: 240px;
+        }
+        
+        .colorPicker .oned,
+        .colorPicker .oned .bg {
+            height: 240px;
+        }
+        
+        .colorPicker .oned,
+        .colorPicker .oned .bg,
+        .colorPicker .oned .pointer .shape {
+            width: 20px;
+        }
+        
+        .colorPicker .twod .bg {
+            position: absolute;
+            /* These seem to cause issues in some browsers, careful!
+border: 1px solid #BBB;
+-moz-border-radius: .3em;
+border-radius: .3em;
+*/
+        }
+        
+        .colorPicker .twod .pointer {
+            position: relative;
+            z-index: 2;
+            width: 8px;
+        }
+        
+        .colorPicker .twod .pointer .shape {
+            position: absolute;
+        }
+        
+        .colorPicker .twod .pointer .shape1 {
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border: 2px solid black;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        
+        .colorPicker .twod .pointer .shape2 {
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border: 2px solid white;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+        
+        .colorPicker .oned {
+            float: left;
+            margin: 0.5em;
+        }
+        
+        .colorPicker .oned .bg {
+            border: 1px solid #BBB;
+            /*
+-moz-border-radius: .3em;
+border-radius: .3em;
+*/
+        }
+        
+        .colorPicker .oned .pointer {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .colorPicker .oned .pointer .shape {
+            position: absolute;
+            margin-left: -1px;
+            margin-top: -4px;
+            height: 5px;
+            border: 2px solid black;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        /* gradients, tweak as needed based on which browsers you want to support */
+        
+        .colorPicker .oned .bg {
+            background: -moz-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0000), color-stop(17%, #ffff00), color-stop(33%, #00ff00), color-stop(50%, #00ffff), color-stop(66%, #0000ff), color-stop(83%, #ff00ff), color-stop(100%, #ff0000));
+            background: -webkit-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: -o-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: linear-gradient(to bottom, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+        }
+        
+        .colorPicker .twod .bg1 {
+            z-index: 0;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        
+        .colorPicker .twod .bg2 {
+            z-index: 1;
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+        
+        #hslPicker .twod .bg1 {
+            background: -moz-linear-gradient(left, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff0000), color-stop(17%, #ffff00), color-stop(33%, #00ff00), color-stop(50%, #00ffff), color-stop(66%, #0000ff), color-stop(83%, #ff00ff), color-stop(100%, #ff0000));
+            background: -webkit-linear-gradient(left, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: -o-linear-gradient(left, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+            background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+        }
+        
+        #hslPicker .twod .bg2 {
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(127, 127, 127, 1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(127, 127, 127, 1)));
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(127, 127, 127, 1) 100%);
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(127, 127, 127, 1) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(127, 127, 127, 1) 100%);
+        }
+        
+        #hslPicker .oned .bg {
+            z-index: 1;
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%);
+            background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+        }
+        
+        #hslPicker .extras {
+            width: 100px;
+        }
+        
+        #hslPicker .oned.alpha {
+            margin: 0;
+        }
+        
+        #hslPicker .oned.alpha .bg {
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(0, 0, 0, 1)));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            /* Opera 11.10+ */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            /* W3C */
+        }
+        
+        .cf-timer-card {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: Roboto;
+            display: inline-block;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .cf-timer-card .cf-timer-unit-block {
+            display: inline-block;
+        }
+        
+        .cf-timer-unit-inline {
+            display: inline;
+        }
+        
+        .cf-timer-unit-number {
+            padding: 25px 25px;
+            background: #000;
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            margin: 0px 5px;
+        }
+        
+        .countdown-timmer {
+            text-align: center;
+        }
+        /*         
+ #wpsticky-setting-relative-dates {
+     display: none;
+ } */
+        
+        .setting-section {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #wpfooter {
+            position: relative !important;
+            margin: 0;
+        }
+        
+        #wpbody {
+            /* height: 90vh; */
+        }
+        
+        .notification {
+            color: #FFC107;
+            text-align: center;
+        }
+        
+        .preview-notice {
+            color: #FFC107;
+            margin-left: 107px;
+            text-align: center;
+        }
+        
+        .statis-title td {
+            /* display: block; */
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 1px solid #c3c4c7;
+            padding: 20px 20px;
+            border-top: 0px;
+        }
+        
+        .statis-form td {
+            color: #50575e;
+        }
+        
+        .statis-form {
+            /* border-spacing: 10px !important; */
+            /* border-collapse: separate !important; */
+            border: 1px solid #c3c4c7;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .statis-content td {
+            margin: 20px;
+            text-align: center;
+            padding: 20px 20px;
+            font-weight: bold;
+            font-size: 28px;
+            text-align: center;
+        }
+        
+        .header-pulgin {
+            /* display: flex; */
+        }
+        
+        .header-pulgin .row-title {
+            /* line-height: 50px; */
+            border: 1px solid #2271b1;
+            color: #2271b1;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            margin-top: 10px;
+            margin-left: 15px;
+            background: #f6f7f7;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        
+        #add-countdown-timmer {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        
+        .admin-listbanner td {
+            padding: 10px 20px;
+            text-align: start;
+            font-size: 14px;
+        }
+        
+        .title-banner,
+        .body-listbanner .title-banner-link {
+            width: 60%;
+            text-align: start !important;
+            overflow: hidden;
+        }
+        
+        .admin-listbanner {
+            border-collapse: collapse;
+            width: 100%;
+            user-select: none !important;
+        }
+        
+        .id-banner,
+        .id-body {
+            width: 10%;
+            text-align: center !important;
+        }
+        
+        .admin-listbanner thead {
+            border-bottom: 0.5px solid rgb(199, 195, 195);
+            background-color: rgb(236, 234, 234);
+        }
+        
+        .admin-listbanner tfoot {
+            background-color: rgb(236, 234, 234);
+            border-top: 0.5px solid rgb(241, 235, 235);
+        }
+        
+        .title-banner-link a {
+            display: block;
+            color: #18507d;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .title-banner-link a:focus {
+            outline: 0px solid transparent !important;
+            border-color: #FFFF !important;
+            box-shadow: 0 0 0 1px #ffffff, 0 0 2px 1px rgb(79 148 212 / 80%) !important;
+        }
+
+
+        body .gradient-btn,
+        body .btn2 {
+            width: 380px;
+            height: 60px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+            color: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+            background-size: 600%;
+            cursor: pointer; /* Add this line */
+            -webkit-animation: anime 16s linear infinite;
+                    animation: anime 16s linear infinite;
+        }
+        body .btn2 {
+            position: absolute;
+            margin-top: -40px;
+            z-index: -1;
+            filter: blur(30px);
+            opacity: 0.8;
+        }
+
+        @-webkit-keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }  
+        
+        .centered-div {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
